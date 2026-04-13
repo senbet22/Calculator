@@ -1,7 +1,8 @@
 # C# Calculator
  
 A console-based calculator app built with .NET 10.
- 
+ ### Program runs inside (while) loop until user types `x` to exit.
+
 ## Features
  
 - Add, subtract, multiply, and divide
@@ -20,8 +21,6 @@ A console-based calculator app built with .NET 10.
 ```bash
 dotnet run
 ```
- 
-Type `x` to exit.
 
 ---
  
