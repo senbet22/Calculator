@@ -21,19 +21,8 @@ while (true)
         continue;
     }
 
-    Console.Write("Enter first number: ");
-    string inputA = Console.ReadLine() ?? string.Empty;
-    if (!double.TryParse(inputA, out double a))
+    if (!inputHelper.TryAskNumbers(out double a, out double b))
     {
-        Console.WriteLine("Invalid number. Please try again.\n");
-        continue;
-    }
-
-    Console.Write("Enter second number: ");
-    string inputB = Console.ReadLine() ?? string.Empty;
-    if (!double.TryParse(inputB, out double b))
-    {
-        Console.WriteLine("Invalid number. Please try again.\n");
         continue;
     }
 
@@ -58,5 +47,4 @@ while (true)
     }
 }
 Console.WriteLine("Goodbye!");
-Console.ReadKey();
 
