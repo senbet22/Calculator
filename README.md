@@ -10,7 +10,7 @@ A console-based calculator app built with .NET 10.
  
 ## Project Structure
  
-- `Operations.cs` — math methods
+- `Operations.cs` — math methods (Contains two number overloads and `List` overloads
 - `InputHelper.cs` — console input and parsing
 - `Program.cs` — app flow
  
