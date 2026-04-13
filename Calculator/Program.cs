@@ -15,6 +15,12 @@ while (true)
 
     if (opInput == "x") break;
 
+    if (opInput is not ("1" or "2" or "3" or "4"))
+    {
+        Console.WriteLine("Invalid choice. Please try again.\n");
+        continue;
+    }
+
     Console.Write("Enter first number: ");
     string inputA = Console.ReadLine() ?? string.Empty;
     if (!double.TryParse(inputA, out double a))
@@ -51,6 +57,6 @@ while (true)
         Console.WriteLine($"Error: {ex.Message}\n");
     }
 }
-
 Console.WriteLine("Goodbye!");
+Console.ReadKey();
 
