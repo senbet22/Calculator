@@ -64,7 +64,7 @@ while (true)
             continue;
         }
 
-        Console.WriteLine($"Result: {result}\n");
+        Console.WriteLine($"Result: {result:F2}\n");
     }
     catch (DivideByZeroException ex)
     {
