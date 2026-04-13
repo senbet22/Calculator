@@ -3,7 +3,7 @@
 using Calculator;
 
 Operations operations = new Operations();
-
+InputHelper inputHelper = new InputHelper();
 
 
 Console.WriteLine("-_-_-_ C# Calculator _-_-_-");
@@ -11,14 +11,8 @@ Console.WriteLine("Type 'x' to exit App.\n");
 
 while (true)
 {
-    Console.WriteLine("Choose Operation:");
-    Console.WriteLine(" 1 = Addition");
-    Console.WriteLine(" 2 = Subtraction");
-    Console.WriteLine(" 3 = Multiplication");
-    Console.WriteLine(" 4 = Division");
-    Console.Write("\nOperation: ");
+    string? opInput = inputHelper.AskOperation();
 
-    string? opInput = Console.ReadLine() ?? string.Empty;
     if (opInput == "x") break;
 
     Console.Write("Enter first number: ");
