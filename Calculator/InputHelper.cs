@@ -14,7 +14,7 @@ namespace Calculator
             Console.Write("\nOperation: ");
             return Console.ReadLine() ?? string.Empty;
         }
-        public bool TryAskNumbers(out double a, out double b)
+        public bool TryAskNumbers(out double a, out double b )
         {
             a = 0;
             b = 0;
@@ -36,6 +36,29 @@ namespace Calculator
             }
 
             return true;
+        }
+
+        public bool TryAskNumbers(out List<double> numbers)
+        {
+            numbers = [];
+
+            Console.Write("Enter numbers separated by comma (e.g. 4, 7.5, 2): ");
+            string rawInput = Console.ReadLine() ?? string.Empty;
+
+            foreach (string part in rawInput.Split(','))
+            {
+                if (double.TryParse(part.Trim(), out double value))
+                {
+                    numbers.Add(value);
+                }
+                else
+                {
+                    Console.WriteLine($"Invalid number: '{part.Trim()}'. Please try again.\n");
+                    return false;
+                }
+            }
+
+            return numbers.Count > 0;
         }
     }
 

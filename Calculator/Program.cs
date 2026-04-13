@@ -21,22 +21,44 @@ while (true)
         continue;
     }
 
-    if (!inputHelper.TryAskNumbers(out double a, out double b))
-    {
-        continue;
-    }
+    Console.Write("Enter two numbers (press 1) or multiple numbers (press 2): ");
+
+    string mode = Console.ReadLine() ?? string.Empty;
 
     double result = 0;
 
     try
     {
-        switch (opInput)
+        if (mode == "1")
         {
-            case "1": result = operations.Add(a, b); break;
-            case "2": result = operations.Subtract(a, b); break;
-            case "3": result = operations.Multiply(a, b); break;
-            case "4": result = operations.Divide(a, b); break;
-            default: Console.WriteLine("Invalid choice. Please try again.\n"); continue;
+            if (!inputHelper.TryAskNumbers(out double a, out double b)) continue;
+
+            switch (opInput)
+            {
+                case "1": result = operations.Add(a, b); break;
+                case "2": result = operations.Subtract(a, b); break;
+                case "3": result = operations.Multiply(a, b); break;
+                case "4": result = operations.Divide(a, b); break;
+                default: Console.WriteLine("Invalid choice. Please try again.\n"); continue;
+            }
+        }
+        else if (mode == "2")
+        {
+            if (!inputHelper.TryAskNumbers(out List<double> numbers)) continue;
+
+            switch (opInput)
+            {
+                case "1": result = operations.Add(numbers); break;
+                case "2": result = operations.Subtract(numbers); break;
+                case "3": result = operations.Multiply(numbers); break;
+                case "4": result = operations.Divide(numbers); break;
+                default: Console.WriteLine("Invalid choice. Please try again.\n"); continue;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid mode. Please try again.\n");
+            continue;
         }
 
         Console.WriteLine($"Result: {result}\n");
@@ -47,4 +69,3 @@ while (true)
     }
 }
 Console.WriteLine("Goodbye!");
-
