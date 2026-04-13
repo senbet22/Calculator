@@ -4,7 +4,8 @@ A console-based calculator app built with .NET 10.
  
 ## Features
  
-- Add, subtract, multiply, and divide two numbers
+- Add, subtract, multiply, and divide
+- Two modes: two numbers or multiple numbers
 - Input validation with error handling
 - Runs in a loop until the user exits
  
