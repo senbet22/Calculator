@@ -44,11 +44,15 @@ User picks mode (1 = two numbers, 2 = multiple)
  
 ## Pseudocode
  
-Ask the user to pick an operation and a mode.
+Ask the user to pick an operation. If the input is not 1, 2, 3, or 4, show an error and ask again.
  
-If mode is 1, ask for two numbers and run the operation on them.
+Ask the user to pick a mode — two numbers or multiple numbers. If the input is not 1 or 2, show an error and ask again.
  
-If mode is 2, ask for multiple numbers separated by a comma and run the operation on the whole list.
+If mode is 1, ask for two numbers one at a time. If either input is not a valid number, show an error and start over.
+ 
+If mode is 2, ask for all numbers in one line separated by commas. If any part is not a valid number, show an error and start over.
+ 
+Run the chosen operation on the numbers. If the user tries to divide by zero, show an error instead of crashing.
  
 Show the result and start over.
  
