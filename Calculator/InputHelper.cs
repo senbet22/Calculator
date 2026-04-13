@@ -4,6 +4,8 @@ namespace Calculator
 {
     public class InputHelper
     {
+
+        // String Method to ask for the operation.
         public string? AskOperation()
         {
             Console.WriteLine("Choose Operation:");
@@ -14,6 +16,8 @@ namespace Calculator
             Console.Write("\nOperation: ");
             return Console.ReadLine() ?? string.Empty;
         }
+
+        // Method to ask for two numbers.
         public bool TryAskNumbers(out double a, out double b )
         {
             a = 0;
@@ -37,7 +41,7 @@ namespace Calculator
 
             return true;
         }
-
+        // Method to ask for multiple numbers.
         public bool TryAskNumbers(out List<double> numbers)
         {
             numbers = [];

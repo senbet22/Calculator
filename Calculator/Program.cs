@@ -1,4 +1,6 @@
 ﻿// Calculator App!
+// This app runs inside a (while) loop. Press (x) to exit the app.
+// App asks for the operation to perform (addition, subtraction, multiplication, division).
 
 using Calculator;
 
@@ -11,6 +13,7 @@ Console.WriteLine("Type 'x' to exit App.\n");
 
 while (true)
 {
+    // Ask for the operation to perform.
     string? opInput = inputHelper.AskOperation();
 
     if (opInput == "x") break;
@@ -26,7 +29,7 @@ while (true)
     string mode = Console.ReadLine() ?? string.Empty;
 
     double result = 0;
-
+    
     try
     {
         if (mode == "1")
